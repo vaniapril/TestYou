@@ -6,9 +6,10 @@ namespace TestYou.Database
     public class AppContext : DbContext
     {
         public DbSet<UserDbModel> Users { get; set; }
-        
         public DbSet<TestDbModel> Tests { get; set; }
-
+        public DbSet<QuestionDbModel> Qestions { get; set; }
+        public DbSet<ResultDbModel> Results { get; set; }
+        
         public AppContext()
         {
             Database.EnsureCreated();

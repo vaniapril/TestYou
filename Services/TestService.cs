@@ -17,17 +17,36 @@ namespace TestYou.Services
 
         public List<Test> GetTests()
         {
-            return _appContext.Tests.Select(BuildTest).ToList();
+            var tests = _appContext.Tests.Select(BuildTest).ToList();
+            tests.ForEach(test => { test.Questions = GetQuestionsByTestId(test.Id);});
+            return tests;
         }
 
-        private Test BuildTest(TestDbModel u)
+        private Test BuildTest(TestDbModel t)
         {
             return new Test
             {
-                Id = u.Id,
-                Title = u.Title,
-                Questions = u.Questions,
-                Result = u.Result
+                Id = t.Id,
+                Title = t.Title,
+                Description = t.Description,
+                UserId = t.UserId,
+                Result = t.Result.Split('/')
+            };
+        }
+        
+        public Question[] GetQuestionsByTestId(int id)
+        {
+            return _appContext.Qestions.Select(BuildQuestion).Where(question => question.TestId == id).ToArray();
+        }
+
+        private Question BuildQuestion(QuestionDbModel q)
+        {
+            return new Question
+            {
+                Id = q.Id,
+                TestId = q.TestId,
+                Text = q.Text,
+                Answers = q.Answers.Split('/')
             };
         }
     }

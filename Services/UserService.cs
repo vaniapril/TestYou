@@ -27,7 +27,6 @@ namespace TestYou.Services
                 Id = u.Id,
                 Login = u.Login,
                 Password = u.Password,
-                Results = u.Results
             };
         }
     }
