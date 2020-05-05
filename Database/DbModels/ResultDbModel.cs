@@ -4,8 +4,7 @@
     {
         public int Id { set; get; }
         public int UserId { set; get; }
-        public int TestId { set; get; }
-        public bool isLike { set; get; }
+        public int TestId { set; get; } 
         public string Description { set; get; }
     }
 }

@@ -9,7 +9,6 @@ namespace TestYou.Services
     public class UserService
     {
         private readonly AppContext _appContext;
-
         public UserService()
         {
             _appContext = new AppContext();
@@ -19,7 +18,7 @@ namespace TestYou.Services
         {
             return _appContext.Users.Select(BuildUser).ToList();
         }
-
+        
         private User BuildUser(UserDbModel u)
         {
             return new User

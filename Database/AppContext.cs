@@ -9,6 +9,8 @@ namespace TestYou.Database
         public DbSet<TestDbModel> Tests { get; set; }
         public DbSet<QuestionDbModel> Qestions { get; set; }
         public DbSet<ResultDbModel> Results { get; set; }
+        public DbSet<CommentDbModel> Comments { get; set; }
+        public DbSet<TestResultDbModel> TestResult { set; get; }
         
         public AppContext()
         {
