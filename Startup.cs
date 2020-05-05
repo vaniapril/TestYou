@@ -51,7 +51,7 @@ namespace TestYou
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Registrations}/{action=Registration}/{id?}");
             });
         }
     }
