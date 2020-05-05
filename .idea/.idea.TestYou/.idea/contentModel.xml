@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\User\.Rider2019.3\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\User\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\User\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_TestYou.1564101867.00" t="ExcludeRecursive" />
+    <e p="D:\4.Edu\2.Prog\1.Git\TestYou" t="IncludeRecursive">
       <e p=".gitignore" t="Include" />
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
+        <e p="CreateTestController.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
+        <e p="LoginController.cs" t="Include" />
+        <e p="ProfileController.cs" t="Include" />
+        <e p="QuestionController.cs" t="Include" />
+        <e p="RegistrationController.cs" t="Include" />
+        <e p="TestDescriptionController.cs" t="Include" />
+        <e p="TestsController.cs" t="Include" />
+        <e p="ThanksController.cs" t="Include" />
       </e>
       <e p="Database" t="Include">
         <e p="AppContext.cs" t="Include" />
@@ -29,11 +40,7 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Pages" t="Include">
-        <e p="TestDescription" t="Include">
-          <e p="TestDescription.cshtml" t="Include" />
-        </e>
-      </e>
+      <e p="Pages" t="Include" />
       <e p="Program.cs" t="Include" />
       <e p="Properties" t="Include">
         <e p="launchSettings.json" t="Include" />
@@ -69,24 +76,27 @@
           <e p="_Layout.cshtml" t="Include" />
           <e p="CreateTest.cshtml" t="Include" />
         </e>
-        <e p="HomePage" t="Include">
+        <e p="Home" t="Include">
           <e p="_Layout.cshtml" t="Include" />
-          <e p="HomePage.cshtml" t="Include" />
+          <e p="Home.cshtml" t="Include" />
         </e>
-        <e p="PersonalAccount" t="Include">
+        <e p="Login" t="Include">
           <e p="_Layout.cshtml" t="Include" />
-          <e p="PersonalAccount.cshtml" t="Include" />
+          <e p="Login.cshtml" t="Include" />
         </e>
-        <e p="RegistrationForm" t="Include">
+        <e p="Profile" t="Include">
           <e p="_Layout.cshtml" t="Include" />
-          <e p="RegistrationForm.cshtml" t="Include" />
+          <e p="Profile.cshtml" t="Include" />
         </e>
-        <e p="Registrations" t="Include">
+        <e p="Question" t="Include">
+          <e p="Question.cshtml" t="Include" />
+        </e>
+        <e p="Registration" t="Include">
           <e p="_Layout.cshtml" t="Include" />
           <e p="Registration.cshtml" t="Include" />
         </e>
-        <e p="Testing" t="Include">
-          <e p="Testing.cshtml" t="Include" />
+        <e p="TestDescription" t="Include">
+          <e p="TestDescription.cshtml" t="Include" />
         </e>
         <e p="Tests" t="Include">
           <e p="_Layout.cshtml" t="Include" />
@@ -160,7 +170,5 @@
         </e>
       </e>
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_TestYou.793532977.00" t="ExcludeRecursive" />
   </component>
 </project>

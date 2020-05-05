@@ -3,16 +3,16 @@ using Microsoft.Extensions.Logging;
 
 namespace TestYou.Controllers
 {
-    public class HomeController : Controller
+    public class ThanksController: Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ThanksController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public ThanksController(ILogger<ThanksController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Home()
+        public IActionResult Thanks()
         {
             return View();
         }
