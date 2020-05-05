@@ -12,14 +12,13 @@
       <e p="Database" t="Include">
         <e p="AppContext.cs" t="Include" />
         <e p="DbModels" t="Include">
+          <e p="CommentDbModel.cs" t="Include" />
           <e p="QuestionDbModel.cs" t="Include" />
           <e p="ResultDbModel.cs" t="Include" />
           <e p="TestDbModel.cs" t="Include" />
+          <e p="TestResultDbModel.cs" t="Include" />
           <e p="UserDbModel.cs" t="Include" />
         </e>
-      </e>
-      <e p="Models" t="Include">
-        <e p="ErrorViewModel.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
@@ -41,6 +40,7 @@
       </e>
       <e p="README.md" t="Include" />
       <e p="Services" t="Include">
+        <e p="ErrorViewModel.cs" t="Include" />
         <e p="Models" t="Include">
           <e p="Result" t="Include">
             <e p="Result.cs" t="Include" />
@@ -48,6 +48,8 @@
           <e p="Test" t="Include">
             <e p="Question.cs" t="Include" />
             <e p="Test.cs" t="Include" />
+            <e p="TestResult.cs" t="Include" />
+            <e p="Сomment.cs" t="Include" />
           </e>
           <e p="User" t="Include">
             <e p="User.cs" t="Include" />
