@@ -105,11 +105,29 @@
       </e>
       <e p="wwwroot" t="Include">
         <e p="css" t="Include">
+          <e p="CreateTestStyle.css" t="Include" />
+          <e p="HomeStyle.css" t="Include" />
+          <e p="LoginStyle.css" t="Include" />
+          <e p="ProfileStyle.css" t="Include" />
+          <e p="QuestionStyle.css" t="Include" />
+          <e p="RegistrationStyle.css" t="Include" />
           <e p="site.css" t="Include" />
+          <e p="TestDesription.css" t="Include" />
+          <e p="TestsStyle.css" t="Include" />
+          <e p="ThanksStyle.css" t="Include" />
         </e>
         <e p="favicon.ico" t="Include" />
         <e p="js" t="Include">
-          <e p="FunctionOnLogin.js" t="Include" />
+          <e p="FuncCreateTest.js" t="Include" />
+          <e p="FuncHome.js" t="Include" />
+          <e p="FuncLogin.js" t="Include" />
+          <e p="FuncProfile.js" t="Include" />
+          <e p="FuncQuestion.js" t="Include" />
+          <e p="FuncRegistration.js" t="Include" />
+          <e p="FuncTestDescription.js" t="Include" />
+          <e p="FuncTests.js" t="Include" />
+          <e p="FuncThanks.js" t="Include" />
+          <e p="site.js" t="Include" />
         </e>
         <e p="lib" t="Include">
           <e p="bootstrap" t="Include">

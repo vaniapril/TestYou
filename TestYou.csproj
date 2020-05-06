@@ -38,9 +38,5 @@
       <_ContentIncludedByDefault Remove="Pages\Thanks\_Layout.cshtml" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Pages" />
-    </ItemGroup>
-
 
 </Project>
