@@ -109,7 +109,7 @@
         </e>
         <e p="favicon.ico" t="Include" />
         <e p="js" t="Include">
-          <e p="site.js" t="Include" />
+          <e p="FunctionOnLogin.js" t="Include" />
         </e>
         <e p="lib" t="Include">
           <e p="bootstrap" t="Include">

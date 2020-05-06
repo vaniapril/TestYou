@@ -5,15 +5,18 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Login</title>
 </head>
 <body>
 <div>
-    <h1 align="center">Login</h1>
-    <input name="Login" type="text" size="25"style="position: absolute;left: 43%;top: 45%;"  placeholder="Login"></input>
-    <input name="Password" type="text" size="25"style="position: absolute;left: 43%;top: 50%"  placeholder="Password"></input>
+    <h1 align="center">Sign In</h1>
+    
+        <input id="Login"name="Login" type="email" size="25"style="position: absolute;left: 43%;top: 45%;"  placeholder="Login" required></input>
+        <input id="Password" name="Password" type="password" size="25"style="position: absolute;left: 43%;top: 50%"  placeholder="Password" required></input>
+    <input onclick= "GetLogin()" id="Send" type="submit" value="Enter" style="position: absolute;left: 43%;top: 55%"></input>
+    <script src="js/FunctionOnLogin.js"></script>
 </div>
 </body>
 </html>
