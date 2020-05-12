@@ -16,17 +16,7 @@ namespace TestYou.Services
 
         public List<User> GetUsers()
         {
-            return _appContext.Users.Select(BuildUser).ToList();
-        }
-        
-        private User BuildUser(UserDbModel u)
-        {
-            return new User
-            {
-                Id = u.Id,
-                Login = u.Login,
-                Password = u.Password,
-            };
+            return _appContext.Users.Select(User.FromDbModel).ToList();
         }
     }
 }

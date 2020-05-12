@@ -6,6 +6,5 @@
         public int Id { set; get; }
         public int UserId { set; get; }
         public string Description { set; get; }
-        public string Result { set; get; }
     }
 }

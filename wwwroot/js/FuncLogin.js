@@ -1,5 +1,9 @@
-function AcceptData() {
-var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
-//Далее надо просто напросто запизнуть это на сервер и найти есть ли такой user изи!!!
+function Login() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    console.log("POST");
+    $.ajax({
+        url:'/Login/LoginPost',
+        type:'POST'
+    });
 }

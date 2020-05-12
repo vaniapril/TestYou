@@ -13,10 +13,36 @@ namespace TestYou.Services
         {
             _appContext = new AppContext();
         }
+
+        public void AddTest(Test test)
+        {
+            if (test.Comments != null)
+            {
+                foreach (var comment in test.Comments)
+                {
+                    _appContext.Comments.Add(Comment.ToDbModel(comment));
+                } 
+            }
+            if (test.Results != null)
+            {
+                foreach (var testResult in test.Results)
+                {
+                    _appContext.TestResult.Add(TestResult.ToDbModel(testResult));
+                }
+            }
+            if (test.Questions != null)
+            {
+                foreach (var question in test.Questions)
+                {
+                    _appContext.Qestions.Add(Question.ToDbModel(question));
+                } 
+            }
+            _appContext.Tests.Add(Test.ToDbModel(test));
+        }
         
         public List<Test> GetTests()
         {
-            var tests = _appContext.Tests.Select(BuildTest).ToList();
+            var tests = _appContext.Tests.Select(Test.FromDbModel).ToList();
             tests.ForEach(test => { test.Questions = GetQuestionsByTestId(test.Id);});
             tests.ForEach(test => { test.Comments = GetCommentsByTestId(test.Id);});
             tests.ForEach(test => { test.Results = GetTestResultsByTestId(test.Id);});
@@ -24,7 +50,7 @@ namespace TestYou.Services
         }
         public List<Test> GetTestsByUserId(int id)
         {
-            var tests = _appContext.Tests.Select(BuildTest).Where(result => result.UserId == id).ToList();
+            var tests = _appContext.Tests.Select(Test.FromDbModel).Where(result => result.UserId == id).ToList();
             tests.ForEach(test => { test.Questions = GetQuestionsByTestId(test.Id);});
             tests.ForEach(test => { test.Comments = GetCommentsByTestId(test.Id);});
             tests.ForEach(test => { test.Results = GetTestResultsByTestId(test.Id);});
@@ -33,57 +59,15 @@ namespace TestYou.Services
         
         private Question[] GetQuestionsByTestId(int id)
         {
-            return _appContext.Qestions.Select(BuildQuestion).Where(question => question.TestId == id).ToArray();
+            return _appContext.Qestions.Select(Question.FromDbModel).Where(question => question.TestId == id).ToArray();
         }
         private Comment[] GetCommentsByTestId(int id)
         {
-            return _appContext.Comments.Select(BuildComment).Where(comment => comment.TestId == id).ToArray();
+            return _appContext.Comments.Select(Comment.FromDbModel).Where(comment => comment.TestId == id).ToArray();
         }
         private TestResult[] GetTestResultsByTestId(int id)
         {
-            return _appContext.TestResult.Select(BuildTestResult).Where(testResult => testResult.TestId == id).ToArray();
-        }
-        private Test BuildTest(TestDbModel t)
-        {
-            return new Test
-            {
-                Id = t.Id,
-                Title = t.Title,
-                Description = t.Description,
-                UserId = t.UserId,
-            };
-        }
-        private Question BuildQuestion(QuestionDbModel q)
-        {
-            return new Question
-            {
-                Id = q.Id,
-                TestId = q.TestId,
-                Text = q.Text,
-                Answers = q.Answers.Split('/')
-            };
-        }
-        private Comment BuildComment(CommentDbModel c)
-        {
-            return new Comment
-            {
-                Id = c.Id,
-                TestId = c.TestId,
-                Text = c.Text,
-                IsLike = c.IsLike,
-                UserId = c.UserId
-            };
-        }
-        private TestResult BuildTestResult(TestResultDbModel c)
-        {
-            return new TestResult
-            {
-                Id = c.Id,
-                TestId = c.TestId,
-                Text = c.Text,
-                Min = c.Min,
-                Max = c.Max
-            };
+            return _appContext.TestResult.Select(TestResult.FromDbModel).Where(testResult => testResult.TestId == id).ToArray();
         }
     }
 }
