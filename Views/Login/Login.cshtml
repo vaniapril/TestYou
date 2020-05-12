@@ -7,13 +7,18 @@
 
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <link rel="stylesheet" href="~/css/HomeStyle.css"/>
-        <script src="~/js/FuncHome.js"></script>
+    <link rel="stylesheet" href="~/css/LoginStyle.css"/>
+        <script src="~/js/FuncLogin.js"></script>
     <title>Login</title>
 </head>
 <body>
 <div>
-    <h1 align="center">Sign In</h1>
+    <h1 class="HorizontalCenterMainText" >Sign In</h1>
+    <form>
+        <input id="email" type="email" size="30" value="" placeholder="Email" class="ForLogin" required/>
+        <input id="password" type="password" size="30" value="" placeholder="Password" class="ForPassword" required/>
+        <input id="button" class="ForButton" value="Enter" type="submit" onclick="AcceptData()"/>
+    </form>
 </div>
 </body>
 </html>

@@ -38,5 +38,12 @@
       <_ContentIncludedByDefault Remove="Pages\Thanks\_Layout.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="Views\Profile\Profile.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
 
 </Project>
