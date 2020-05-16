@@ -13,11 +13,14 @@
 </head>
 <body>
 <div>
-    <h1 class="HorizontalCenterMainText" >Sign In</h1>
+    <h1 class="HorizontalCenterMainText" >Test You</h1>
     <form>
-        <input id="email" type="email" size="30" value="" placeholder="Email" class="ForLogin" required/>
-        <input id="password" type="password" size="30" value="" placeholder="Password" class="ForPassword" required/>
-        <input id="button" class="ForButton" value="Enter" type="submit" onclick="Login()"/>
+        <h3 class = "NamePage">Вход</h3>
+        <input id="email" type="email" size="30" value="" placeholder="Логин" class="ForLogin" required/>
+        <input id="password" type="password" size="30" value="" placeholder="Пароль" class="ForPassword" required/>
+        <a class="ForRegistration" asp-area="" asp-controller="Registration" asp-action="Registration">У вас нет аккаунта?</a>
+        <input id="button1" class="ForButton" value="Войти" type="submit" onclick="Login()"/>
+       
     </form>
 </div>
 </body>

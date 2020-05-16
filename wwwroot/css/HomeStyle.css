@@ -1,0 +1,9 @@
+h1.NameTest{
+    /*text-align: center;*/
+    text-align: -webkit-center;
+    font-family: "Brush Script MT";
+   
+}
+p.Text{
+    text-align: justify;
+}

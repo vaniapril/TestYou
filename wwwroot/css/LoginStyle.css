@@ -1,7 +1,7 @@
 h1.HorizontalCenterMainText{
     position: absolute;
     top: 10%;
-    left: 45%;
+    left: 45.25%;
 }
 input.ForLogin{
     position: absolute;
@@ -19,4 +19,16 @@ input.ForButton{
     position: absolute;
     top: 50%;
     left: 41%;
+}
+
+a.ForRegistration{
+    color :black;
+    position: absolute;
+    top: 50.75%;
+    left: 50%;
+}
+h3.NamePage{
+    position: absolute;
+    top: 30%;
+    left: 47.5%;
 }

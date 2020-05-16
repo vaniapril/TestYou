@@ -1,9 +1,10 @@
 function Login() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-    console.log("POST");
-    $.ajax({
-        url:'/Login/LoginPost',
-        type:'POST'
-    });
+    document.location.href = "../Home/Home";
+   // console.log("POST");
+    //$.ajax({
+      //  url: '/Login/LoginPost',
+       // type: 'POST'
+    //});
 }

@@ -16,11 +16,13 @@
 <body>
 <div>
     <form action="js/FuncRegistration.js">
-        <h1 class="HorizontalCenterMainText">Registration</h1>
-        <input id="email" class="ForLogin" value="" type="email" size="30" placeholder="Email" required="required"/>
-        <input id="password1" class="ForPassword1" value="" type="password" size="30" placeholder="Password" required="required"/>
-        <input id="password2" class="ForPassword2" value="" type="password" size="30" placeholder="Confirm Password" required="required">
-        <input onclick="CreateAccount()" id="button" class="ForButton" value="Enter" type="submit"/>
+        <h1 class="HorizontalCenterMainText">Test You</h1>
+        <h3 class = "ForPageName">Регистрация</h3>
+        <input id="email" class="ForLogin" value="" type="email" size="30" placeholder="Логин" required="required"/>
+        <input id="password1" class="ForPassword1" value="" type="password" size="30" placeholder="Пароль" required="required"/>
+        <input id="password2" class="ForPassword2" value="" type="password" size="30" placeholder="Подтвердите Пароль" required="required">
+        <input onclick="CreateAccount()" id="button" class="ForButton" value="Зарегестрироваться" type="submit"/>
+        <a class="ForLogin" asp-area="" asp-controller = "Login" asp-action="Login">У вас уже есть аккаунт?</a>
     </form>
 </div>
 </body>
