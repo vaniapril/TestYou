@@ -26,7 +26,7 @@ namespace TestYou.Services
             {
                 foreach (var testResult in test.Results)
                 {
-                    _appContext.testResults.Add(TestResult.ToDbModel(testResult));
+                    _appContext.test_results.Add(TestResult.ToDbModel(testResult));
                 }
             }
             if (test.Questions != null)
@@ -79,7 +79,7 @@ namespace TestYou.Services
         }
         private TestResult[] GetTestResultsByTestId(int id)
         {
-            return _appContext.testResults.Select(TestResult.FromDbModel).Where(testResult => testResult.TestId == id).ToArray();
+            return _appContext.test_results.Select(TestResult.FromDbModel).Where(testResult => testResult.TestId == id).ToArray();
         }
         private Answer[] GetAnswersByQuestionId(int id)
         {
