@@ -16,20 +16,20 @@ namespace TestYou.Services
 
         public void AddResult(Result result)
         {
-            _appContext.Results.Add(Result.ToDbModel(result));
+            _appContext.results.Add(Result.ToDbModel(result));
         } 
         
         public List<Result> GetResultByUserId(int id)
         {
-            return _appContext.Results.Select(Result.FromDbModel).Where(result => result.UserId == id).ToList();
+            return _appContext.results.Select(Result.FromDbModel).Where(result => result.UserId == id).ToList();
         }
         public List<Result> GetResultByTestId(int id)
         {
-            return _appContext.Results.Select(Result.FromDbModel).Where(result => result.TestId == id).ToList();
+            return _appContext.results.Select(Result.FromDbModel).Where(result => result.TestId == id).ToList();
         }
         public List<Result> GetResult(int id)
         {
-            return _appContext.Results.Select(Result.FromDbModel).ToList();
+            return _appContext.results.Select(Result.FromDbModel).ToList();
         }
     }
 }

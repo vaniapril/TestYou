@@ -15,17 +15,17 @@ namespace TestYou.Services
         }
         public void AddUser(User user)
         {    
-            _appContext.Users.Add(User.ToDbModel(user));
+            _appContext.users.Add(User.ToDbModel(user));
         }
 
         public User GetUserById(int Id)
         {
-            return _appContext.Users.Select(User.FromDbModel).First(user => user.Id == Id);
+            return _appContext.users.Select(User.FromDbModel).First(user => user.Id == Id);
         }
             
         public List<User> GetUsers()
         {
-            return _appContext.Users.Select(User.FromDbModel).ToList();
+            return _appContext.users.Select(User.FromDbModel).ToList();
         }
     }
 }

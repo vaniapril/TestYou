@@ -5,13 +5,13 @@ namespace TestYou.Database
 {
     public class AppContext : DbContext
     {
-        public DbSet<UserDbModel> Users { get; set; }
-        public DbSet<TestDbModel> Tests { get; set; }
-        public DbSet<QuestionDbModel> Qestions { get; set; }
-        public DbSet<ResultDbModel> Results { get; set; }
-        public DbSet<CommentDbModel> Comments { get; set; }
-        public DbSet<TestResultDbModel> TestResults { set; get; }
-        public DbSet<AnswerDbModel> Answers { set; get; }
+        public DbSet<UserDbModel> users { get; set; }
+        public DbSet<TestDbModel> tests { get; set; }
+        public DbSet<QuestionDbModel> questions { get; set; }
+        public DbSet<ResultDbModel> results { get; set; }
+        public DbSet<CommentDbModel> comments { get; set; }
+        public DbSet<TestResultDbModel> testResults { set; get; }
+        public DbSet<AnswerDbModel> answers { set; get; }
         
         public AppContext()
         {

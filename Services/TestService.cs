@@ -19,14 +19,14 @@ namespace TestYou.Services
             {
                 foreach (var comment in test.Comments)
                 {
-                    _appContext.Comments.Add(Comment.ToDbModel(comment));
+                    _appContext.comments.Add(Comment.ToDbModel(comment));
                 } 
             }
             if (test.Results != null)
             {
                 foreach (var testResult in test.Results)
                 {
-                    _appContext.TestResults.Add(TestResult.ToDbModel(testResult));
+                    _appContext.testResults.Add(TestResult.ToDbModel(testResult));
                 }
             }
             if (test.Questions != null)
@@ -37,18 +37,19 @@ namespace TestYou.Services
                     {
                         foreach (var answer in question.Answers)
                         {
-                            _appContext.Answers.Add(Answer.ToDbModel(answer));
+                            _appContext.answers.Add(Answer.ToDbModel(answer));
                         }
                     }
-                    _appContext.Qestions.Add(Question.ToDbModel(question));
+                    _appContext.questions.Add(Question.ToDbModel(question));
                 } 
             }
-            _appContext.Tests.Add(Test.ToDbModel(test));
+            _appContext.tests.Add(Test.ToDbModel(test));
+            _appContext.SaveChanges();
         }
         
         public List<Test> GetTests()
         {
-            var tests = _appContext.Tests.Select(Test.FromDbModel).ToList();
+            var tests = _appContext.tests.Select(Test.FromDbModel).ToList();
             tests.ForEach(test => { test.Questions = GetQuestionsByTestId(test.Id);});
             tests.ForEach(test => { test.Comments = GetCommentsByTestId(test.Id);});
             tests.ForEach(test => { test.Results = GetTestResultsByTestId(test.Id);});
@@ -56,7 +57,7 @@ namespace TestYou.Services
         }
         public List<Test> GetTestsByUserId(int id)
         {
-            var tests = _appContext.Tests.Select(Test.FromDbModel).Where(result => result.UserId == id).ToList();
+            var tests = _appContext.tests.Select(Test.FromDbModel).Where(result => result.UserId == id).ToList();
             tests.ForEach(test => { test.Questions = GetQuestionsByTestId(test.Id);});
             tests.ForEach(test => { test.Comments = GetCommentsByTestId(test.Id);});
             tests.ForEach(test => { test.Results = GetTestResultsByTestId(test.Id);});
@@ -65,7 +66,7 @@ namespace TestYou.Services
         
         private Question[] GetQuestionsByTestId(int id)
         {
-            var questions = _appContext.Qestions.Select(Question.FromDbModel).Where(question => question.TestId == id).ToArray();
+            var questions = _appContext.questions.Select(Question.FromDbModel).Where(question => question.TestId == id).ToArray();
             foreach (var question in questions)
             {
                 question.Answers = GetAnswersByQuestionId(question.Id);
@@ -74,15 +75,15 @@ namespace TestYou.Services
         }
         private Comment[] GetCommentsByTestId(int id)
         {
-            return _appContext.Comments.Select(Comment.FromDbModel).Where(comment => comment.TestId == id).ToArray();
+            return _appContext.comments.Select(Comment.FromDbModel).Where(comment => comment.TestId == id).ToArray();
         }
         private TestResult[] GetTestResultsByTestId(int id)
         {
-            return _appContext.TestResults.Select(TestResult.FromDbModel).Where(testResult => testResult.TestId == id).ToArray();
+            return _appContext.testResults.Select(TestResult.FromDbModel).Where(testResult => testResult.TestId == id).ToArray();
         }
         private Answer[] GetAnswersByQuestionId(int id)
         {
-            return _appContext.Answers.Select(Answer.FromDbModel).Where(answer => answer.QuestionId == id).ToArray();
+            return _appContext.answers.Select(Answer.FromDbModel).Where(answer => answer.QuestionId == id).ToArray();
         }
     }
 }

@@ -22,6 +22,12 @@ namespace TestYou.Controllers
         {
             Console.WriteLine(test.ToString());
             _testService.AddTest(test);
+            var ts = _testService.GetTests();
+            Console.WriteLine(ts.Count);
+            ts.ForEach(t =>
+            {
+                Console.WriteLine(t.ToString());
+            });
         }
         
         public IActionResult  TestCreate()
