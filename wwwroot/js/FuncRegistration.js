@@ -1,4 +1,5 @@
 function CreateAccount (){
+    console.log("POST-CREATE-USER");
     var password1 = document.getElementById("password1").value;
     var password2 = document.getElementById("password2").value;
     var Login = document.getElementById("email").value;

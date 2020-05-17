@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -19,6 +20,7 @@ namespace TestYou.Controllers
         [HttpPost]
         public void LoginPost(string login, string password)
         {
+            Console.WriteLine(login + " / " + password);
             List<User> users = _userService.GetUsers();
             bool isExist = false;
             foreach (var user in users)
