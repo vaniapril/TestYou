@@ -36,30 +36,37 @@ namespace TestYou.Services.Models.Test
             string q = "";
             string r = "";
             string c = "";
-            if (Comments != null)
+            if (Comments != null && Comments.Length != 0)
             {
                 foreach (var comment in Comments)
                 {
-                    c += comment.ToString() + ",";
-                } 
+                    c += comment.ToString() + ", ";
+                }
+
+                c = c.Substring(0, c.Length - 2);
             }
-            if (Results != null)
+            if (Results != null && Results.Length != 0)
             {
                 foreach (var testResult in Results)
                 {
-                    r += testResult.ToString() + ",";
+                    r += testResult.ToString() + ", ";
                 }
+
+                r = r.Substring(0, r.Length - 2);
             }
-            if (Questions != null)
+            if (Questions != null && Questions.Length != 0)
             {
                 foreach (var question in Questions)
                 {
-                    q += question.ToString() + ",";
-                } 
+                    q += question.ToString() + ", ";
+                }
+                q = q.Substring(0, q.Length - 2);
             }
             return "Test {Id: " + Id + ", Title: " + Title +
                    ", UserId: " + UserId + ", Description: " + Description + 
-                   ", Question: " + q + ", TestResult: " + r + ", Comment: " + c + "}";
+                   ", Question: [" + q +
+                   "], TestResult: [" + r +
+                   "], Comment: [" + c + "]}";
         }
     }
 }

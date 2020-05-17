@@ -121,7 +121,7 @@
         </e>
         <e p="favicon.ico" t="Include" />
         <e p="js" t="Include">
-          <e p="FuncCreateTest.js" t="Include" />
+          <e p="FuncCreateTest_.js" t="Include" />
           <e p="FuncHome.js" t="Include" />
           <e p="FuncLogin.js" t="Include" />
           <e p="FuncProfile.js" t="Include" />

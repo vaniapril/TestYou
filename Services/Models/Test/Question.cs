@@ -37,7 +37,17 @@ namespace TestYou.Services.Models.Test
         }
         public override string ToString()
         {
-            return "Question {Id: " + Id + ", TestId: " + TestId + ", Text: " + Text + ", Answers: " + Answers + "}";
+            string answ = "";
+            if (Answers != null && Answers.Length != 0)
+            {
+                foreach (var answer in Answers)
+                {
+                    answ += answer + ", ";
+                }
+
+                answ = answ.Substring(0, answ.Length - 2);
+            }
+            return "Question {Id: " + Id + ", TestId: " + TestId + ", Text: " + Text + ", Answers: [" + answ + "]}";
         }
     }
 }
