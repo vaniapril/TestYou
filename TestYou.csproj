@@ -45,5 +45,10 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Views\Tests\Tests.cshtml" />
+      <UpToDateCheckInput Remove="Views\Tests\_Layout.cshtml" />
+    </ItemGroup>
+
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TestYou.Services;
@@ -22,6 +23,22 @@ namespace TestYou.Controllers
         {
             return _testService.GetTests();
         }
+        
+        [HttpPost]
+        public void AddTest()
+        {
+            Test test = new Test
+            {
+                Id = 1,
+                Title = "arw",
+                Description = "der",
+                UserId = 3
+            };
+            Console.WriteLine("Add test: " + test.ToString());
+            _testService.AddTest(test);
+        }
+
+
         
         public IActionResult Home()
         {

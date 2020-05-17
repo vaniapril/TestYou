@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\User\.Rider2019.3\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\User\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\User\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_TestYou.1564101867.00" t="ExcludeRecursive" />
+    <e p="D:\4.Edu\2.Prog\1.Git\TestYou" t="IncludeRecursive">
       <e p=".gitignore" t="Include" />
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
-        <e p="CreateTestController.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
         <e p="LoginController.cs" t="Include" />
         <e p="ProfileController.cs" t="Include" />
-        <e p="QuestionController.cs" t="Include" />
         <e p="RegistrationController.cs" t="Include" />
+        <e p="TestCreateController.cs" t="Include" />
         <e p="TestDescriptionController.cs" t="Include" />
-        <e p="TestsController.cs" t="Include" />
+        <e p="TestPassingController.cs" t="Include" />
+        <e p="TestResultController.cs" t="Include" />
         <e p="ThanksController.cs" t="Include" />
       </e>
       <e p="Database" t="Include">
         <e p="AppContext.cs" t="Include" />
         <e p="DbModels" t="Include">
+          <e p="AnswerDbModel.cs" t="Include" />
           <e p="CommentDbModel.cs" t="Include" />
           <e p="QuestionDbModel.cs" t="Include" />
           <e p="ResultDbModel.cs" t="Include" />
@@ -49,6 +53,7 @@
             <e p="Result.cs" t="Include" />
           </e>
           <e p="Test" t="Include">
+            <e p="Answer.cs" t="Include" />
             <e p="Question.cs" t="Include" />
             <e p="Test.cs" t="Include" />
             <e p="TestResult.cs" t="Include" />
@@ -68,10 +73,6 @@
       <e p="Views" t="Include">
         <e p="_ViewImports.cshtml" t="Include" />
         <e p="_ViewStart.cshtml" t="Include" />
-        <e p="CreateTest" t="Include">
-          <e p="_Layout.cshtml" t="Include" />
-          <e p="CreateTest.cshtml" t="Include" />
-        </e>
         <e p="Home" t="Include">
           <e p="_Layout.cshtml" t="Include" />
           <e p="Home.cshtml" t="Include" />
@@ -84,19 +85,23 @@
           <e p="_Layout.cshtml" t="Include" />
           <e p="Profile.cshtml" t="Include" />
         </e>
-        <e p="Question" t="Include">
-          <e p="Question.cshtml" t="Include" />
-        </e>
         <e p="Registration" t="Include">
           <e p="_Layout.cshtml" t="Include" />
           <e p="Registration.cshtml" t="Include" />
         </e>
+        <e p="TestCreate" t="Include">
+          <e p="_Layout.cshtml" t="Include" />
+          <e p="TestCreate.cshtml" t="Include" />
+        </e>
         <e p="TestDescription" t="Include">
           <e p="TestDescription.cshtml" t="Include" />
         </e>
-        <e p="Tests" t="Include">
+        <e p="TestPassing" t="Include">
+          <e p="TestPassing.cshtml" t="Include" />
+        </e>
+        <e p="TestResult" t="Include">
           <e p="_Layout.cshtml" t="Include" />
-          <e p="Tests.cshtml" t="Include" />
+          <e p="TestResult.cshtml" t="Include" />
         </e>
         <e p="Thanks" t="Include">
           <e p="_Layout.cshtml" t="Include" />
@@ -105,27 +110,27 @@
       </e>
       <e p="wwwroot" t="Include">
         <e p="css" t="Include">
-          <e p="CreateTestStyle.css" t="Include" />
           <e p="HomeStyle.css" t="Include" />
           <e p="LoginStyle.css" t="Include" />
           <e p="ProfileStyle.css" t="Include" />
-          <e p="QuestionStyle.css" t="Include" />
           <e p="RegistrationStyle.css" t="Include" />
           <e p="site.css" t="Include" />
-          <e p="TestDesription.css" t="Include" />
-          <e p="TestsStyle.css" t="Include" />
+          <e p="TestCreateStyle.css" t="Include" />
+          <e p="TestDescription.css" t="Include" />
+          <e p="TestPassingStyle.css" t="Include" />
+          <e p="TestResultStyle.css" t="Include" />
           <e p="ThanksStyle.css" t="Include" />
         </e>
         <e p="favicon.ico" t="Include" />
         <e p="js" t="Include">
-          <e p="FuncCreateTest_.js" t="Include" />
           <e p="FuncHome.js" t="Include" />
           <e p="FuncLogin.js" t="Include" />
           <e p="FuncProfile.js" t="Include" />
-          <e p="FuncQuestion.js" t="Include" />
           <e p="FuncRegistration.js" t="Include" />
+          <e p="FuncTestCreate.js" t="Include" />
           <e p="FuncTestDescription.js" t="Include" />
-          <e p="FuncTests.js" t="Include" />
+          <e p="FuncTestPassing.js" t="Include" />
+          <e p="FuncTestResult.js" t="Include" />
           <e p="FuncThanks.js" t="Include" />
           <e p="site.js" t="Include" />
         </e>
@@ -184,7 +189,5 @@
         </e>
       </e>
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_TestYou.793532977.00" t="ExcludeRecursive" />
   </component>
 </project>

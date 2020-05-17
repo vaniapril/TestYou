@@ -6,12 +6,12 @@ using TestYou.Services.Models.Test;
 
 namespace TestYou.Controllers
 {
-    public class CreateTestController : Controller
+    public class TestCreateController : Controller
     {
-        private readonly ILogger<CreateTestController> _logger;
+        private readonly ILogger<TestCreateController> _logger;
         private readonly TestService _testService;
 
-        public CreateTestController(ILogger<CreateTestController> logger)
+        public TestCreateController(ILogger<TestCreateController> logger)
         {
             _logger = logger;
             _testService = new TestService();
@@ -24,7 +24,7 @@ namespace TestYou.Controllers
             _testService.AddTest(test);
         }
         
-        public IActionResult  CreateTest()
+        public IActionResult  TestCreate()
         {
             return View();
         }
