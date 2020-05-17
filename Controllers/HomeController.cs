@@ -21,7 +21,7 @@ namespace TestYou.Controllers
         [HttpGet]
         public List<Test> GetTests()
         {
-            return _testService.GetTests();
+            return _testService.GetAll();
         }
         
         [HttpPost]
@@ -35,10 +35,8 @@ namespace TestYou.Controllers
                 UserId = 3
             };
             Console.WriteLine("Add test: " + test.ToString());
-            _testService.AddTest(test);
+            _testService.Insert(test);
         }
-
-
         
         public IActionResult Home()
         {

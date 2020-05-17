@@ -27,7 +27,7 @@ namespace TestYou.Controllers
                 Password = password
             };
             Console.WriteLine("New User: " + user.ToString());
-            _userService.AddUser(user);
+            _userService.Insert(user);
         }
 
         public IActionResult Registration()

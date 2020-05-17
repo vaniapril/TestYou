@@ -15,7 +15,7 @@ namespace TestYou.Services.Models.Test
             return new Question
             {
                 Id = model.Id,
-                TestId = model.Id,
+                TestId = model.TestId,
                 Text = model.Text,
             };
         }
@@ -24,7 +24,7 @@ namespace TestYou.Services.Models.Test
             return new QuestionDbModel
             {
                 Id = item.Id,
-                TestId = item.Id,
+                TestId = item.TestId,
                 Text = item.Text,
             };
         }
@@ -39,7 +39,7 @@ namespace TestYou.Services.Models.Test
                 }
                 answ = answ.Substring(0, answ.Length - 2);
             }
-            return "Question {Id: " + Id + ", TestId: " + TestId + ", Text: " + Text + ", Answers: [" + answ + "]}";
+            return "{Id: " + Id + ", TestId: " + TestId + ", Text: " + Text + ", Answers: [" + answ + "]}";
         }
     }
 }

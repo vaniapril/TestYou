@@ -9,14 +9,24 @@ namespace TestYou.Services
     public class ResultService
     {
         private readonly AppContext _appContext;
+        private int _resultMaxId;
         public ResultService()
         {
             _appContext = new AppContext();
+            _resultMaxId = 1;
+            foreach (var model in _appContext.results)
+            {
+                if (model.Id > _resultMaxId)
+                {
+                    _resultMaxId = model.Id;
+                }
+            }
         }
 
-        public void AddResult(Result result)
+        public void Insert(Result result)
         {
-            _appContext.results.Add(Result.ToDbModel(result));
+            result.Id = ++_resultMaxId;
+            _appContext.ResultInsert(Result.ToDbModel(result));
         } 
         
         public List<Result> GetResultByUserId(int id)

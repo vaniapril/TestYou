@@ -13,23 +13,24 @@ namespace TestYou.Services.Models.Test
             return new Answer
             {
                 Id = model.Id,
-                QuestionId = model.Id,
+                QuestionId = model.QuestionId,
                 Text = model.Text,
-                Cost = model.Cost         };
+                Cost = model.Cost         
+            };
         }
         public static AnswerDbModel ToDbModel(Answer item)
         {
             return new AnswerDbModel
             {
                 Id = item.Id,
-                TestId = item.Id,
+                QuestionId = item.QuestionId,
                 Text = item.Text,
                 Cost = item.Cost
             };
         }
         public override string ToString()
         {
-            return "Answer {Id: " + Id + ", TestId: " + QuestionId + ", Text: " + Text + ", Cost: " + Cost + "}";
+            return "{Id: " + Id + ", QuestionId: " + QuestionId + ", Text: " + Text + ", Cost: " + Cost + "}";
         }
     }
 }

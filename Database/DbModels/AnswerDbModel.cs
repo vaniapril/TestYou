@@ -6,7 +6,7 @@ namespace TestYou.Database.DbModels
     {
         [Key]
         public int Id { set; get; }
-        public int TestId { set; get; }
+        public int QuestionId { set; get; }
         public string Text { set; get; }
         public int Cost { set; get; }
     }

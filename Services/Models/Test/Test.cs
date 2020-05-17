@@ -40,7 +40,7 @@ namespace TestYou.Services.Models.Test
             {
                 foreach (var comment in Comments)
                 {
-                    c += comment.ToString() + ", ";
+                    c += comment.ToString() + ",\n";
                 }
 
                 c = c.Substring(0, c.Length - 2);
@@ -49,7 +49,7 @@ namespace TestYou.Services.Models.Test
             {
                 foreach (var testResult in Results)
                 {
-                    r += testResult.ToString() + ", ";
+                    r += testResult.ToString() + ",\n";
                 }
 
                 r = r.Substring(0, r.Length - 2);
@@ -58,15 +58,15 @@ namespace TestYou.Services.Models.Test
             {
                 foreach (var question in Questions)
                 {
-                    q += question.ToString() + ", ";
+                    q += question.ToString() + ",\n";
                 }
                 q = q.Substring(0, q.Length - 2);
             }
-            return "Test {Id: " + Id + ", Title: " + Title +
-                   ", UserId: " + UserId + ", Description: " + Description + 
-                   ", Question: [" + q +
-                   "], TestResult: [" + r +
-                   "], Comment: [" + c + "]}";
+            return "{\n    Id: " + Id + ", \n    Title: " + Title +
+                   ", \n    UserId: " + UserId + ", \n    Description: " + Description + 
+                   ", \n    Question: [" + q +
+                   "], \n    TestResult: [" + r +
+                   "], \n    Comment: [" + c + "]\n}";
         }
     }
 }

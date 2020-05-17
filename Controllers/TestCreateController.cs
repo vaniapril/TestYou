@@ -18,15 +18,14 @@ namespace TestYou.Controllers
         }
 
         [HttpPost]
-        public void CreateTestPost(Test test)
+        public void Create(Test test)
         {
-            Console.WriteLine(test.ToString());
-            _testService.AddTest(test);
-            var ts = _testService.GetTests();
-            Console.WriteLine(ts.Count);
+            Console.WriteLine("Create Test" + test.ToString());
+            _testService.Insert(test);
+            var ts = _testService.GetAll();
             ts.ForEach(t =>
             {
-                Console.WriteLine(t.ToString());
+                Console.WriteLine("Test:" + t.ToString());
             });
         }
         

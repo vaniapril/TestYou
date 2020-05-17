@@ -15,7 +15,7 @@ namespace TestYou.Services.Models.Result
             {
                 Id = model.Id,
                 ResultId = model.ResultId,
-                TestId = model.Id,
+                TestId = model.TestId,
                 UserId = model.UserId
             };
         }
@@ -25,13 +25,13 @@ namespace TestYou.Services.Models.Result
             {
                 Id = item.Id,
                 ResultId = item.ResultId,
-                TestId = item.Id,
+                TestId = item.TestId,
                 UserId = item.UserId
             };
         }
         public override string ToString()
         {
-            return "Result {Id: " + Id + ", UserId: " + UserId + ", TestId: " + TestId + ", ResultId: " + ResultId + "}";
+            return "{\nId: " + Id + ", \nUserId: " + UserId + ", \nTestId: " + TestId + ", \nResultId: " + ResultId + "\n}";
         }
     }
 }

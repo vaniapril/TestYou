@@ -33,7 +33,7 @@ namespace TestYou.Services.Models.Test
         }
         public override string ToString()
         {
-            return "TestResult {Id: " + Id + ", TestId: " + TestId + ", Text: " + Text + ", Min: " + Min + ", Max: " + Max + "}";
+            return "{Id: " + Id + ", TestId: " + TestId + ", Text: " + Text + ", Min: " + Min + ", Max: " + Max + "}";
         }
     }
 }

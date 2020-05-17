@@ -28,7 +28,7 @@ namespace TestYou.Services.Models.User
         }
         public override string ToString()
         {
-            return "User {Id: " + Id + ", Login: " + Login + ", Password: " + Password + "}";
+            return "User {\nId: " + Id + ", \nLogin: " + Login + ", \nPassword: " + Password + "\n}";
         }
     }
 }

@@ -33,7 +33,7 @@ namespace TestYou.Services.Models.Test
         }
         public override string ToString()
         {
-            return "Comment {Id: " + Id + ", TestId: " + TestId + ", UserId: " + UserId + ", Text: " + Text + ", IsLike: " + IsLike + "}";
+            return "{Id: " + Id + ", TestId: " + TestId + ", UserId: " + UserId + ", Text: " + Text + ", IsLike: " + IsLike + "}";
         }
     }
 }

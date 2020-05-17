@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using TestYou.Database.DbModels;
 
 namespace TestYou.Database
@@ -12,6 +13,105 @@ namespace TestYou.Database
         public DbSet<CommentDbModel> comments { get; set; }
         public DbSet<TestResultDbModel> test_results { set; get; }
         public DbSet<AnswerDbModel> answers { set; get; }
+        
+        public void UserInsert(UserDbModel item)
+        {
+           var model = users.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Modified;
+            }
+            else
+            {
+                users.Add(item);
+            }
+            SaveChanges();
+        }
+        public void TestInsert(TestDbModel item)
+        {
+            var model = tests.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Modified;
+            }
+            else
+            {
+                tests.Add(item);
+            }
+            SaveChanges();
+        }
+        public void QuestionInsert(QuestionDbModel item)
+        {
+            var model = questions.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Modified;
+            }
+            else
+            {
+                questions.Add(item);
+            }
+            SaveChanges();
+        }
+        public void ResultInsert(ResultDbModel item)
+        {
+            var model = results.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Modified;
+            }
+            else
+            {
+                results.Add(item);
+            }
+            SaveChanges();
+        }
+        public void AnswerInsert(AnswerDbModel item)
+        {
+            var model = answers.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Modified;
+            }
+            else
+            {
+                answers.Add(item);
+            }
+            SaveChanges();
+        }
+        public void TestResultInsert(TestResultDbModel item)
+        {
+            var model = test_results.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Modified;
+            }
+            else
+            {
+                test_results.Add(item);
+            }
+            SaveChanges();
+        }
+        public void CommentInsert(CommentDbModel item)
+        {
+            var model = comments.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Modified;
+            }
+            else
+            {
+                comments.Add(item);
+            }
+            SaveChanges();
+        }
         
         public AppContext()
         {
