@@ -1,5 +1,4 @@
 ﻿using TestYou.Database.DbModels;
-using TestYou.Services.Models.Test;
 
 namespace TestYou.Services.Models.Result
 {

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using TestYou.Database.DbModels;
+﻿using TestYou.Database.DbModels;
 
 namespace TestYou.Services.Models.Test
 {

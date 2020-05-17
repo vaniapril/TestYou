@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Linq;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TestYou.Services;
-using TestYou.Services.Models.User;
 
 namespace TestYou.Controllers
 {
@@ -18,26 +16,22 @@ namespace TestYou.Controllers
             _userService = new UserService();
         }
         [HttpPost]
-        public void LoginPost(string login, string password)
+        public void SignIn(string login, string password) 
         {
-            Console.WriteLine(login + " / " + password);
-            List<User> users = _userService.GetUsers();
-            bool isExist = false;
-            foreach (var user in users)
+            var users = _userService.GetUsers();
+            var isExist = false;
+            foreach (var user in users.Where(user => user.Login == login))
             {
-                if (user.Login == login)
+                isExist = true;
+                if (user.Password == password)
                 {
-                    isExist = true;
-                    if (user.Password == password)
-                    {
-                        HttpContext.Response.StatusCode = (int)HttpStatusCode.OK;
-                    }
-                    else
-                    {
-                        HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                    }
-                    break;
+                    HttpContext.Response.StatusCode = (int)HttpStatusCode.OK;
                 }
+                else
+                {
+                    HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                }
+                break;
             }
             if (isExist)
             {

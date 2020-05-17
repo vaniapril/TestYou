@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TestYou.Database;
-using TestYou.Database.DbModels;
 using TestYou.Services.Models.Result;
 
 namespace TestYou.Services
@@ -27,7 +26,11 @@ namespace TestYou.Services
         {
             result.Id = ++_resultMaxId;
             _appContext.ResultInsert(Result.ToDbModel(result));
-        } 
+        }
+        public Result GetById(int id)
+        {
+            return _appContext.results.Select(Result.FromDbModel).First(result => result.Id == id);
+        }
         
         public List<Result> GetResultByUserId(int id)
         {

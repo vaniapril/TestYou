@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TestYou.Models
+﻿namespace TestYou.Services
 {
     public class ErrorViewModel
     {

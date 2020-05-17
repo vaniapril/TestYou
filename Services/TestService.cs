@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
+using TestYou.Database;
 using TestYou.Services.Models.Test;
-using AppContext = TestYou.Database.AppContext;
 
 namespace TestYou.Services
 {
@@ -116,7 +116,14 @@ namespace TestYou.Services
             tests.ForEach(test => { test.Results = GetTestResultsByTestId(test.Id);});
             return tests;
         }
-
+        public Test GetById(int id)
+        {
+            var t = _appContext.tests.Select(Test.FromDbModel).First(test => test.Id == id);
+            t.Questions = GetQuestionsByTestId(id);
+            t.Comments = GetCommentsByTestId(id);
+            t.Results = GetTestResultsByTestId(id);
+            return t;
+        }
         private Question[] GetQuestionsByTestId(int id)
         {
             var questions = _appContext.questions.Select(Question.FromDbModel).Where(question => question.TestId == id).ToArray();
