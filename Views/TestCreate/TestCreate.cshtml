@@ -9,13 +9,22 @@
 <html lang="ru">
 <head>
     <link rel="stylesheet" href="~/css/TestCreateStyle.css"/>
-            <script src="~/js/FuncTestCreate.js"></script>
+    <script src="~/js/FuncTestCreate.js"></script>
     <title>Create Test</title>
 </head>
 <body>
 <div>
-    <h1 align="center">Create Test</h1>
-    <input type="button" value="Create" onclick="CreateTest()">
+    <h1 class="Title" align="center">Create Test</h1>
+    <h3 id="question">
+        <li class="btn-group"> TESt <li/>
+    </h3>
+    <h4 class="buttons">
+        <input type="button" value="Create" onclick="CreateTest()">
+    </h4>
 </div>
 </body>
 </html>
+
+<script>
+Init()
+</script>
