@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using TestYou.Database.DbModels;
+using TestYou.Services.Models.Test;
 
 namespace TestYou.Database
 {
@@ -111,6 +112,61 @@ namespace TestYou.Database
                 comments.Add(item);
             }
             SaveChanges();
+        }
+
+        public void UserDelete(UserDbModel item)
+        {
+            var model = users.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Deleted;
+            }
+        }
+        public void TestDelete(TestDbModel item)
+        {
+            var model = tests.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Deleted;
+            }
+        }
+        public void QuestionDelete(QuestionDbModel item)
+        {
+            var model = questions.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Deleted;
+            }
+        }
+        public void AnswerDelete(AnswerDbModel item)
+        {
+            var model = answers.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Deleted;
+            }
+        }
+        public void TestResultDelete(TestResultDbModel item)
+        {
+            var model = test_results.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Deleted;
+            }
+        }
+        public void CommentDelete(CommentDbModel item)
+        {
+            var model = comments.FirstOrDefault(i => i.Id == item.Id);
+            if (model != null)
+            {
+                Entry(model).State = EntityState.Detached;
+                Entry(item).State = EntityState.Deleted;
+            }
         }
         
         public AppContext()

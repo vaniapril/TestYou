@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TestYou.Services;
+using TestYou.Services.Models.Test;
 using TestYou.Services.Models.User;
 
 namespace TestYou.Controllers
@@ -9,17 +11,25 @@ namespace TestYou.Controllers
     {
         private readonly ILogger<ProfileController> _logger;
         private readonly UserService _userService;
+        private readonly TestService _testService;
         
         public ProfileController(ILogger<ProfileController> logger)
         {
             _logger = logger;
             _userService = new UserService();
+            _testService = new TestService();
         }
 
         [HttpGet]
         public User GetUser(int id)
         {
             return _userService.GetUserById(id);
+        }
+        
+        [HttpGet]
+        public List<Test> GetUserTest(int id)
+        {
+            return _testService.GetByUserId(id);
         }
         
         public IActionResult Profile()

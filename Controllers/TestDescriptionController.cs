@@ -20,6 +20,11 @@ namespace TestYou.Controllers
         {
             return _testService.GetById(id);
         }
+        [HttpPost]
+        public void Delete(int id)
+        {
+            _testService.DeleteById(id);
+        }
         
         public IActionResult  TestDescription()
         {
