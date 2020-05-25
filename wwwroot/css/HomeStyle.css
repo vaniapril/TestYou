@@ -1,9 +1,18 @@
 h1.NameTest{
+    margin-top: 10%;
     /*text-align: center;*/
     text-align: -webkit-center;
     font-family: "Brush Script MT";
    
 }
 p.Text{
+    width: 50%;
     text-align: justify;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+
+div.Main{
+    margin: revert;
 }
