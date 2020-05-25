@@ -133,7 +133,7 @@ function htmlResult(element, index) {
     html += '<li class="list-group-item">';
     html += '<table border="0" cellpadding="10">';
     html += "<tr align=\"top\"><td align=\"right\">Текст:</td><td align=\"left\">";
-    html += '<input class="Inp" placeholder="Text" oninput="resultTextChange(+ ' + index + ', this.value)" value=\"' + element.Text + '\">';
+    html += '<input class="Inp" placeholder="Текст" oninput="resultTextChange(+ ' + index + ', this.value)" value=\"' + element.Text + '\">';
     html += "</td></tr>";
     html += "<tr align=\"top\"><td align=\"right\">Интервал:</td><td align=\"left\">";
 
