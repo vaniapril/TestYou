@@ -20,10 +20,26 @@ namespace TestYou.Controllers
         [HttpPost]
         public void Create(Test test)
         {
-            Console.WriteLine("Create Test" + test.ToString());
+            Console.WriteLine("Create Test");
             _testService.Insert(test);
             var ts = _testService.GetAll();
             ts.ForEach(t =>
+            {
+                Console.WriteLine("Test:" + t.ToString());
+            });
+        }
+
+        [HttpPost]
+        public void Clear()
+        {
+            Console.WriteLine("Clear Test");
+            var ts = _testService.GetAll();
+            ts.ForEach(t =>
+            {
+                _testService.DeleteById(t.Id);
+            });
+            var ts2 = _testService.GetAll();
+            ts2.ForEach(t =>
             {
                 Console.WriteLine("Test:" + t.ToString());
             });

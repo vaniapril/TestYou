@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,27 +17,26 @@ namespace TestYou.Controllers
             _userService = new UserService();
         }
         [HttpPost]
-        public void SignIn(string login, string password) 
+        public int SignIn(string login, string password) 
         {
-            var users = _userService.GetUsers();
-            var isExist = false;
-            foreach (var user in users.Where(user => user.Login == login))
+            var existing = _userService.GetUsers().FirstOrDefault(user => user.Login == login);
+            if (existing != null)
             {
-                isExist = true;
-                if (user.Password == password)
+                if (existing.Password == password)
                 {
                     HttpContext.Response.StatusCode = (int)HttpStatusCode.OK;
+                    return existing.Id;
                 }
                 else
                 {
-                    HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                    HttpContext.Response.StatusCode = (int)HttpStatusCode.Conflict;
                 }
-                break;
             }
-            if (isExist)
+            else
             {
-                HttpContext.Response.StatusCode = (int) HttpStatusCode.NotFound;
+                HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
             }
+            return 0;
         }
         public IActionResult Login()
         {

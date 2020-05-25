@@ -17,11 +17,11 @@ namespace TestYou.Services
         public TestService()
         {
             _appContext = new AppContext();
-            _testMaxId = 1;
-            _commentMaxId = 1;
-            _answerMaxId = 1;
-            _testResultMaxId = 1;
-            _questionMaxId = 1;
+            _testMaxId = 0;
+            _commentMaxId = 0;
+            _answerMaxId = 0;
+            _testResultMaxId = 0;
+            _questionMaxId = 0;
             foreach (var model in _appContext.answers)
             {
                 if (model.Id > _answerMaxId)
@@ -59,6 +59,40 @@ namespace TestYou.Services
             }
         }
 
+        public void DeleteById(int id)
+        {
+            var test = GetById(id);
+            if (test.Comments != null)
+            {
+                foreach (var comment in test.Comments)
+                {
+                    _appContext.CommentDelete(Comment.ToDbModel(comment));
+                } 
+            }
+            if (test.Results != null)
+            {
+                foreach (var testResult in test.Results)
+                {
+                    _appContext.TestResultDelete(TestResult.ToDbModel(testResult));
+                }
+            }
+            if (test.Questions != null)
+            {
+                foreach (var question in test.Questions)
+                {
+                    if (question.Answers != null)
+                    {
+                        foreach (var answer in question.Answers)
+                        {
+                            _appContext.AnswerDelete(Answer.ToDbModel(answer));
+                        }
+                    }
+                    _appContext.QuestionDelete(Question.ToDbModel(question));
+                } 
+            }
+            _appContext.TestDelete(Test.ToDbModel(test));
+            _appContext.SaveChanges();
+        }
         public void Insert(Test test)
         {
             test.Id = ++_testMaxId;
@@ -124,6 +158,7 @@ namespace TestYou.Services
             t.Results = GetTestResultsByTestId(id);
             return t;
         }
+
         private Question[] GetQuestionsByTestId(int id)
         {
             var questions = _appContext.questions.Select(Question.FromDbModel).Where(question => question.TestId == id).ToArray();

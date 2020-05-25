@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TestYou.Services;
 using TestYou.Services.Models.Test;
@@ -20,9 +22,18 @@ namespace TestYou.Controllers
         {
             return _testService.GetById(id);
         }
-        
-        public IActionResult  TestDescription()
+        [HttpPost]
+        public void Delete(int id)
         {
+            _testService.DeleteById(id);
+        }
+        
+        public IActionResult  TestDescription(int id)
+        {
+            var test = _testService.GetById(id);
+            ViewBag.Title = test.Title;
+            ViewBag.Id = test.Id;
+            ViewBag.Description = test.Description;
             return View();
         }
     }

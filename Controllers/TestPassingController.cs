@@ -9,10 +9,12 @@ namespace TestYou.Controllers
     {
         private readonly ILogger<TestPassingController> _logger;
         private readonly ResultService _resultService;
+        private readonly TestService _testService;
         public TestPassingController(ILogger<TestPassingController> logger)
         {
             _logger = logger;
             _resultService = new ResultService();
+            _testService = new TestService();
         }
         [HttpPost]
         public void Pass(Result result)
@@ -20,8 +22,9 @@ namespace TestYou.Controllers
             _resultService.Insert(result);
         }
 
-        public IActionResult TestPassing()
+        public IActionResult TestPassing(int id)
         {
+            ViewBag.test = _testService.GetById(id);
             return View();
         }
     }

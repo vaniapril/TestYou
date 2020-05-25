@@ -12,8 +12,8 @@ namespace TestYou.Services
         public UserService()
         {
             _appContext = new AppContext();
-            _userMaxId = 1;
-            foreach (var model in _appContext.results)
+            _userMaxId = 0;
+            foreach (var model in _appContext.users)
             {
                 if (model.Id > _userMaxId)
                 {

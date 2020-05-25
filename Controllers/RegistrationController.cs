@@ -20,15 +20,10 @@ namespace TestYou.Controllers
         }
         
         [HttpPost]
-        public void Register(string login, string password)
+        public int Register(string login, string password)
         {
-            var isExist = false;
-            foreach (var user in _userService.GetUsers().Where(user => user.Login == login))
-            {
-                isExist = true;
-            }
-
-            if (!isExist)
+            var existing = _userService.GetUsers().FirstOrDefault(user => user.Login == login);
+            if (existing == null)
             {
                 HttpContext.Response.StatusCode = (int)HttpStatusCode.OK;
                 var u = new User
@@ -36,13 +31,20 @@ namespace TestYou.Controllers
                     Login = login,
                     Password = password
                 };
-                Console.WriteLine("New User: " + u.ToString());
                 _userService.Insert(u);
+                var user = _userService.GetUsers().FirstOrDefault(i => i.Login == login);
+                if (user != null)
+                {
+                    Console.WriteLine("New User: " + user.ToString());
+                    return user.Id;
+                }
             }
             else
             {
+                Console.WriteLine(existing.ToString());
                 HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
             }
+            return 0;
         }
 
         public IActionResult Registration()

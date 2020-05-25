@@ -1,0 +1,21 @@
+div.Main{
+    margin: revert;
+    width: 100%;
+}
+
+h1.Title{
+    padding-top: 20px;
+    text-align: -webkit-center;
+}
+
+h4.buttons{
+    width: 300px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4.box{
+    width: 100%;
+    margin-top: 20px;
+}

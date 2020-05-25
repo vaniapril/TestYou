@@ -9,13 +9,64 @@
 <html lang="ru">
 <head>
     <link rel="stylesheet" href="~/css/TestCreateStyle.css"/>
-            <script src="~/js/FuncTestCreate.js"></script>
-    <title>Create Test</title>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/FuncTestCreate.js"></script>
+    <title>Создание теста</title>
 </head>
 <body>
 <div>
-    <h1 align="center">Create Test</h1>
-    <input type="button" value="Create" onclick="CreateTest()">
+    <h1 class="Title" align="center">TestYou</h1>
+    <h1 class="Title" align="center">Создание теста</h1>
+    <h3>
+         <table border="0" cellpadding="10">
+             <tr align="top">
+                 <td align="right">
+                     Название:
+                 </td>
+                 <td id="Title" align="left"></td>
+             </tr>
+        
+             <tr align="top">
+                 <td align="right">
+                     Описание:
+                 </td>
+                 <td id="Description" align="left"></td>
+             </tr>
+             <tr align="top">
+                 <td align="right">
+                     Вопросы:
+                 </td>
+                 <td id="Questions" align="left"></td>
+             </tr>
+             <tr>
+                 <td></td>
+                 <td>
+                 <input type="button" class="new" value="Новый" onclick="addQuestion()">
+                 </td>
+             </tr>
+
+             <tr align="top">
+                 <td align="right">
+                     Результаты:
+                 </td>
+                 <td id="Results" align="left"></td>
+             </tr>
+             <tr>
+                 <td></td><td>
+                     <input type="button" class="new" value="Новый" onclick="addResult()">
+                 </td>
+             </tr>
+            
+            </table>
+    </h3>
+    <h4 class="buttons">
+        <input type="button" value="Создать" onclick="CreateTest()">
+        <input type="button" value="Назад" onclick="Back()">
+    </h4>
 </div>
 </body>
 </html>
+
+<script>
+Init()
+</script>

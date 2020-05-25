@@ -1,9 +1,27 @@
 h1.NameTest{
-    /*text-align: center;*/
+    margin-top: 30px;
+    text-align: center;
     text-align: -webkit-center;
-    font-family: "Brush Script MT";
-   
 }
 p.Text{
+    font-size: 20px;
+    width: 100%;
     text-align: justify;
+    margin-top: 30px;
+}
+p.Text2{
+    font-size: 30px;
+    text-align: center;
+    top: 30px;
+}
+
+div.Main{
+    margin: revert;
+}
+
+p.TestTitle{
+    font-size: 20px;
+}
+p.TestDescription{
+    font-size: 15px;
 }
