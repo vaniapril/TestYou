@@ -6,10 +6,11 @@
                 url: '/TestCreate/Create',
                 type: 'POST',
                 dataType: "json",
-                data: test
-            }
-        );
-        document.location.href = "../Home/Home";
+                data: test,
+                success: function (data) {
+                    document.location.href = "../Home/Home";
+                }
+            });
     } else {
         alert("Заполните все поля.")
     }

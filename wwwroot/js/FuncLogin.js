@@ -1,6 +1,6 @@
 function Init() {
     console.log(getUserId());
-    if(getUserId() !== ""){
+    if(getUserId() !== "" && getUserId() !== undefined){
         document.location.href = "../Home/Home";
     }
 }

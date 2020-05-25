@@ -18,15 +18,11 @@ namespace TestYou.Controllers
         }
 
         [HttpPost]
-        public void Create(Test test)
+        public int Create(Test test)
         {
-            Console.WriteLine("Create Test");
+            Console.WriteLine("Create Test" + test.ToString());
             _testService.Insert(test);
-            var ts = _testService.GetAll();
-            ts.ForEach(t =>
-            {
-                Console.WriteLine("Test:" + t.ToString());
-            });
+            return 0;
         }
 
         [HttpPost]
@@ -37,11 +33,6 @@ namespace TestYou.Controllers
             ts.ForEach(t =>
             {
                 _testService.DeleteById(t.Id);
-            });
-            var ts2 = _testService.GetAll();
-            ts2.ForEach(t =>
-            {
-                Console.WriteLine("Test:" + t.ToString());
             });
         }
         
