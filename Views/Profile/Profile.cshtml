@@ -9,13 +9,20 @@
 
 <html>
 <head>
+     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="~/css/ProfileStyle.css"/>
-            <script src="~/js/FuncProfile.js"></script>
+    <script src="~/js/FuncProfile.js"></script>
     <title>Profile</title>
 </head>
 <body>
 <div>
-    <h1 align="center">Profile</h1>
+    <h1 class="NameTest" align="center" >Test You</h1>
+    <h2 class="Text">Профиль</h2>
+    <p class="MainText">Дорогой друг, это твой личный кабинет, в котором ты можешь <a asp-action="Registration" asp-area="" asp-controller="Registration">Выйти</a> из аккаунта, и зайти в другой, если такой имеется. Также здесь ты можешь посмотреть все свои созданные тесты, или выйти на <a asp-action="Home" asp-controller="Home" asp-area="">Главную страницу</a>.</p>
 </div>
 </body>
 </html>
+<script>
+Init()
+</script>

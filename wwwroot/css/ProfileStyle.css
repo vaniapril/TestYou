@@ -1,0 +1,14 @@
+h1.NameTest{
+    margin-top: 30px;
+    text-align: center;
+    text-align: -webkit-center;
+}
+h2.Text{
+    font-size: 30px;
+    text-align: center;
+    text-align: -webkit-center;
+     margin-top: 40px;
+}
+p.MainText{
+    text-align: justify;
+}
