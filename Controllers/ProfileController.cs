@@ -22,14 +22,16 @@ namespace TestYou.Controllers
         }
 
         [HttpGet]
-        public User GetUser(int id)
+        public User GetUser()
         {
+            int id = int.Parse(Request.Cookies["UserId"]);
             return _userService.GetUserById(id);
         }
         
         [HttpGet]
-        public List<Test> GetUserTests(int id)
+        public List<Test> GetUserTests()
         {
+            int id = int.Parse(Request.Cookies["UserId"]);
             Console.WriteLine(id);
             return _testService.GetByUserId(id);
         }

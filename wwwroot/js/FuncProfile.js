@@ -1,7 +1,7 @@
 function Init() {
     console.log("POST-GET-TEST");
     $.ajax({
-            url: '/Profile/GetUser?id=' + getUserId(),
+            url: '/Profile/GetUser',
             type: 'GET'
         }
     ).done(function(data) {
@@ -11,7 +11,7 @@ function Init() {
         element.innerHTML += '"' + login + '"';
     });
     $.ajax({
-            url: '/Profile/GetUserTests?id=' + getUserId(),
+            url: '/Profile/GetUserTests',
             type: 'GET'
         }
     ).done(function(data) {

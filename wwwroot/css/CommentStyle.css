@@ -1,4 +1,4 @@
-div.Main{
+﻿div.Main{
     margin: revert;
     width: 100%;
 }
@@ -21,15 +21,22 @@ h4.box{
     margin-top: 20px;
 }
 
-p.result{
-    font-size: 30px;
-    text-align: center;
-    width: 100%;
-}
 p.Text{
     font-size: 20px;
     text-align: center;
     width: 30%;
     margin-left: 35%;
     margin-top: 30px;
+}
+
+h4.TextField{
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+h4.like{
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
 }

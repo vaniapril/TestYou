@@ -6,8 +6,8 @@ function Init() {
 }
 
 function Login() {
-    var login = document.getElementById("email1").value;
-    var password = document.getElementById("password").value;
+    let login = document.getElementById("email1").value;
+    let password = document.getElementById("password").value;
     if(login !== "" && password !== ""){
         console.log("POST-LOGIN");
         $.ajax({

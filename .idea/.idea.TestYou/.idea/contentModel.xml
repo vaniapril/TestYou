@@ -10,6 +10,7 @@
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
+        <e p="CommentController.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
         <e p="LoginController.cs" t="Include" />
         <e p="ProfileController.cs" t="Include" />
@@ -73,6 +74,10 @@
       <e p="Views" t="Include">
         <e p="_ViewImports.cshtml" t="Include" />
         <e p="_ViewStart.cshtml" t="Include" />
+        <e p="Comment" t="Include">
+          <e p="_Layout.cshtml" t="Include" />
+          <e p="Comment.cshtml" t="Include" />
+        </e>
         <e p="Home" t="Include">
           <e p="_Layout.cshtml" t="Include" />
           <e p="Home.cshtml" t="Include" />
@@ -112,6 +117,7 @@
       </e>
       <e p="wwwroot" t="Include">
         <e p="css" t="Include">
+          <e p="CommentStyle.css" t="Include" />
           <e p="HomeStyle.css" t="Include" />
           <e p="LoginStyle.css" t="Include" />
           <e p="ProfileStyle.css" t="Include" />
@@ -125,6 +131,7 @@
         </e>
         <e p="favicon.ico" t="Include" />
         <e p="js" t="Include">
+          <e p="FuncComment.js" t="Include" />
           <e p="FuncHome.js" t="Include" />
           <e p="FuncLogin.js" t="Include" />
           <e p="FuncProfile.js" t="Include" />

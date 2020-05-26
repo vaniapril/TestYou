@@ -6,6 +6,9 @@ function Pass(id) {
     document.location.href = "../TestPassing/TestPassing?id=" + id;
 }
 
+let comments;
+let users;
+
 function Init(id) {
     console.log("POST-GET-TEST");
     $.ajax({
@@ -14,19 +17,34 @@ function Init(id) {
         }
     ).done(function(data) {
         console.log(data);
-        let html = htmlCommentList(data.comments);
-        let element = document.getElementById("Comments");
-        element.innerHTML = html;
+        comments = data.comments;
+        $.ajax({
+                url: '/TestDescription/GetUsers',
+                type: 'GET'
+            }
+        ).done(function(data) {
+            console.log(data);
+            users = data;
+            let html = htmlCommentList();
+            let element = document.getElementById("Comments");
+            element.innerHTML = html;
+        });
     });
 }
 
-function htmlCommentList(comments) {
+function htmlCommentList() {
     let html = "";
     comments.forEach(comment => {
         html += "<li width='100%' class='list-group-item'> ";
         html += "<table width='100%'>";
         html += "<tr width='100%'>";
-        html += "<td width='100%'>" + comment.userId + "</td><td></td>";
+        html += "<td width='100%'>";
+            users.forEach(user => {
+            if(user.id === comment.userId){
+                html += user.login;
+            }
+        });
+        html += "</td><td></td>";
         html += "</tr>";
 
         html += "<tr>";

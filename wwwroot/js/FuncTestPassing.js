@@ -72,7 +72,7 @@ function end() {
             dataType: "json",
             data: result,
             success: function (data) {
-                document.location.href = "../TestResult/TestResult?testId="+result.ResultId + "&id=" + result.TestId;
+                document.location.href = "../TestResult/TestResult?testId="+ result.TestId + "&id=" + result.ResultId;
             }
         });
     } else {

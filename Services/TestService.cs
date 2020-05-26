@@ -134,6 +134,11 @@ namespace TestYou.Services
             }
             _appContext.TestInsert(Test.ToDbModel(test));
         }
+        public void InsertComment(Comment comment)
+        {
+            comment.Id = ++_commentMaxId;
+            _appContext.CommentInsert(Comment.ToDbModel(comment));
+        }
         public List<Test> GetAll()
         {
             var tests = _appContext.tests.Select(Test.FromDbModel).ToList();

@@ -1,5 +1,5 @@
 function getUserId() {
-    return getCookie("UserId")
+    return getCookie("UserId");
 }
 
 function deleteUserId() {
@@ -7,7 +7,7 @@ function deleteUserId() {
 }
 
 function setUserId(id) {
-    document.cookie = "UserId=" + id;
+    document.cookie = "UserId=" + id + "; path=/";
 }
 
 function getCookie(name) {
