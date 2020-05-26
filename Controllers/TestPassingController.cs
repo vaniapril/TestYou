@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TestYou.Services;
 using TestYou.Services.Models.Result;
+using TestYou.Services.Models.Test;
 
 namespace TestYou.Controllers
 {
@@ -17,14 +19,23 @@ namespace TestYou.Controllers
             _testService = new TestService();
         }
         [HttpPost]
-        public void Pass(Result result)
+        public int Pass(Result result)
         {
+            Console.WriteLine("New Result:" + result.ToString());
             _resultService.Insert(result);
+            return 0;
+        }
+        [HttpGet]
+        public Test Get(int id)
+        {
+            return _testService.GetById(id);
         }
 
         public IActionResult TestPassing(int id)
         {
-            ViewBag.test = _testService.GetById(id);
+            var test = _testService.GetById(id);
+            ViewBag.Id = test.Id;
+            ViewBag.Title = test.Title;
             return View();
         }
     }

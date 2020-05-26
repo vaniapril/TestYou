@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TestYou.Services;
@@ -27,8 +28,9 @@ namespace TestYou.Controllers
         }
         
         [HttpGet]
-        public List<Test> GetUserTest(int id)
+        public List<Test> GetUserTests(int id)
         {
+            Console.WriteLine(id);
             return _testService.GetByUserId(id);
         }
         
