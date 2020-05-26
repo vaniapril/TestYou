@@ -1,0 +1,36 @@
+div.Main{
+    margin: revert;
+    width: 100%;
+}
+
+h1.Title{
+    padding-top: 20px;
+    text-align: -webkit-center;
+}
+
+h4.buttons{
+    text-align: center;
+    width: 300px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4.box{
+    width: 100%;
+    margin-top: 20px;
+}
+
+p.result{
+    font-size: 30px;
+    text-align: center;
+    width: 10%;
+    margin-left: 45%;
+}
+p.Text{
+    font-size: 20px;
+    text-align: center;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 30px;
+}

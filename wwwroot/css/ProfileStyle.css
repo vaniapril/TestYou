@@ -8,7 +8,14 @@ h2.Text{
     text-align: center;
     text-align: -webkit-center;
      margin-top: 40px;
+    margin-bottom: 20px;
 }
 p.MainText{
     text-align: justify;
+}
+
+p.Text2{
+    font-size: 30px;
+    text-align: center;
+    top: 30px;
 }

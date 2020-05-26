@@ -9,6 +9,7 @@ h1.Title{
 }
 
 h4.buttons{
+    text-align: center;
     width: 300px;
     margin-top: 40px;
     margin-left: auto;

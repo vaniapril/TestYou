@@ -1,7 +1,17 @@
 function Init() {
     console.log("POST-GET-TEST");
     $.ajax({
-            url: '/Profile/GetTests',
+            url: '/Profile/GetUser?id=' + getUserId(),
+            type: 'GET'
+        }
+    ).done(function(data) {
+        console.log(data);
+        let login = data.login;
+        let element = document.getElementById("login");
+        element.innerHTML += '"' + login + '"';
+    });
+    $.ajax({
+            url: '/Profile/GetUserTests?id=' + getUserId(),
             type: 'GET'
         }
     ).done(function(data) {
@@ -42,4 +52,9 @@ function htmlTestList(data) {
 
 function Description(id) {
     document.location.href = "../TestDescription/TestDescription?id=" + id;
+}
+
+function SignOut() {
+    deleteUserId();
+    document.location.href = "../Login/Login";
 }
