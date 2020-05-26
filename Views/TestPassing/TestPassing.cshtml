@@ -1,20 +1,30 @@
 @model object
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <link rel="stylesheet" href="~/css/TestPassingStyle.css"/>
-            <script src="~/js/FuncTestPassing.js"></script>
+    <script src="~/js/FuncTestPassing.js"></script>
     <title>title</title>
 </head>
 <body>
-<div>
-      
-</div>
+    <div class="Main">
+        <h1 class="NameTest" align="center" >Test You</h1>
+        <p class="Text" id="title"></p>
+        <p class="questions" id="questions"></p>
+        <h4 id="Tests"></h4>
+
+        <input type='button' class='end' value='Завершить' onclick="end()"/>
+    </div>
 </body>
 </html>
+
+<script>
+Init(@ViewBag.Id)
+</script>
