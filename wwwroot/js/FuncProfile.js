@@ -16,7 +16,12 @@ function Init() {
         }
     ).done(function(data) {
         console.log(data);
-        let html = htmlTestList(data);
+        let html;
+        if(data.length !== 0){
+            html = htmlTestList(data);
+        } else {
+            html = "<p style='text-align: center; margin-top: 30px'>У вас пока нет тестов</p>"
+        }
         let element = document.getElementById("Tests");
         element.innerHTML = html;
     });

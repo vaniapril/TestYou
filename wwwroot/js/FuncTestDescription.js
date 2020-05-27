@@ -18,17 +18,21 @@ function Init(id) {
     ).done(function(data) {
         console.log(data);
         comments = data.comments;
-        $.ajax({
-                url: '/TestDescription/GetUsers',
-                type: 'GET'
-            }
-        ).done(function(data) {
-            console.log(data);
-            users = data;
-            let html = htmlCommentList();
-            let element = document.getElementById("Comments");
-            element.innerHTML = html;
-        });
+        if(comments.length !== 0){
+            let element = document.getElementById("comment");
+            element.innerHTML = "Комментарии:";
+            $.ajax({
+                    url: '/TestDescription/GetUsers',
+                    type: 'GET'
+                }
+            ).done(function(data) {
+                console.log(data);
+                users = data;
+                let html = htmlCommentList();
+                let element = document.getElementById("Comments");
+                element.innerHTML = html;
+            });
+        }
     });
 }
 
