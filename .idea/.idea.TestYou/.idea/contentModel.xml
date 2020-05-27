@@ -48,6 +48,7 @@
       <e p="Services" t="Include">
         <e p="ErrorViewModel.cs" t="Include" />
         <e p="Models" t="Include">
+          <e p="DefaultModels.cs" t="Include" />
           <e p="Result" t="Include">
             <e p="Result.cs" t="Include" />
           </e>
