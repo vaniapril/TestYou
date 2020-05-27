@@ -64,7 +64,7 @@ namespace TestYou.Services.Models
             {
                 new TestResult()
                 {
-                    Text = "Вы самый настояший Бакложан",
+                    Text = "Вы самый настояший Баклажан",
                     Max = 20,
                     Min = 11
                 },
@@ -76,7 +76,7 @@ namespace TestYou.Services.Models
                 },
                 new TestResult()
                 {
-                    Text = "Вы суровая капуста!",
+                    Text = "Вы суровая Капуста!",
                     Max = 30,
                     Min = 21
                 }
