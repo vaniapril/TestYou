@@ -65,20 +65,20 @@ namespace TestYou.Services.Models
                 new TestResult()
                 {
                     Text = "Вы самый настояший Баклажан",
-                    Max = 20,
-                    Min = 11
+                    Max = 24,
+                    Min = 17
                 },
                 new TestResult()
                 {
                     Text = "Вы красивая Морковь!",
-                    Max = 10,
-                    Min = 1
+                    Max = 17,
+                    Min = 9
                 },
                 new TestResult()
                 {
                     Text = "Вы суровая Капуста!",
                     Max = 30,
-                    Min = 21
+                    Min = 24
                 }
             },
             Questions  = new[]
