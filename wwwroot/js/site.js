@@ -3,7 +3,7 @@ function getUserId() {
 }
 
 function deleteUserId() {
-    document.cookie = "UserId=; expires=-1";
+    document.cookie = "UserId=; expires=-1; path=/";
 }
 
 function setUserId(id) {
