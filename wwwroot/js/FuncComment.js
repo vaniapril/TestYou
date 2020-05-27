@@ -34,7 +34,7 @@ function Comment(testId){
         dataType: "json",
         data: comment,
         success: function (data) {
-            Back();
+            BackToHomePage();
         }
     });
 }
@@ -58,6 +58,6 @@ function SetLike(state) {
     redrawLike();
 }
 
-function Back() {
-    history.back();
+function BackToHomePage() {
+    document.location.href = "../Home/Home";
 }
