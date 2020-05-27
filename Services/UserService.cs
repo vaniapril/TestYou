@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using TestYou.Database;
 using TestYou.Services.Models.User;
+using AppContext = TestYou.Database.AppContext;
 
 namespace TestYou.Services
 {
@@ -20,6 +21,14 @@ namespace TestYou.Services
                     _userMaxId = model.Id;
                 }
             }
+
+            var user = new User()
+            {
+                Id = 1,
+                Login = "admin",
+                Password = "admin"
+            };
+            _appContext.UserInsert(User.ToDbModel(user));
         }
         public void Insert(User user)
         {

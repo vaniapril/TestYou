@@ -3,6 +3,7 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TestYou.Services;
+using TestYou.Services.Models;
 
 namespace TestYou.Controllers
 {

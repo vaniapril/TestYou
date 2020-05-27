@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TestYou.Services;
+using TestYou.Services.Models;
 using TestYou.Services.Models.Test;
 
 namespace TestYou.Controllers
@@ -20,7 +21,16 @@ namespace TestYou.Controllers
         [HttpGet]
         public List<Test> GetTests()
         {
-            return _testService.GetAll();
+            var tests = _testService.GetAll();
+            if (tests.Count == 0)
+            {
+                DefaultModels.Create();
+                return _testService.GetAll();
+            }
+            else
+            {
+                return tests;
+            } 
         }
 
         public IActionResult Home()
