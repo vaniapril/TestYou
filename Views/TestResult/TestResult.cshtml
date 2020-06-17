@@ -1,0 +1,32 @@
+@model object
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "TestResult";
+}
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/css/TestResultStyle.css"/>
+    <script src="~/js/FuncTestResult.js"></script>
+    <title>Create Test</title>
+</head>
+<body>
+<div class="Main">
+    <h1 class="Title" align="center" >Test You</h1>
+    <p class="Text" id="title">Ваш результат:</p>
+    <p class="result" id="result"></p>
+    <h4 id="Tests"></h4>
+    <h4 class="buttons">
+        <input type='button' value='На главную страницу' onclick="Home()"/>
+         <input type='button' value='Оставить комментарий' onclick="Comment(@ViewBag.testId)"/>
+    </h4>
+</div>
+</body>
+</html>
+
+<script>
+Init(@ViewBag.id, @ViewBag.testId);
+</script>

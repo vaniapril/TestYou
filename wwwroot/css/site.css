@@ -57,7 +57,10 @@ html {
   position: relative;
   min-height: 100%;
 }
-
+h1.container1{
+  text-align: center;
+  color: #0f6674;
+}
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;

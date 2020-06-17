@@ -1,0 +1,42 @@
+﻿div.Main{
+    margin: revert;
+    width: 100%;
+}
+
+h1.Title{
+    padding-top: 20px;
+    text-align: -webkit-center;
+}
+
+h4.buttons{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4.box{
+    width: 100%;
+    margin-top: 20px;
+}
+
+p.Text{
+    font-size: 20px;
+    text-align: center;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 30px;
+}
+
+h4.TextField{
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+h4.like{
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}

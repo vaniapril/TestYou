@@ -4,5 +4,51 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.0-preview2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Registration\Registration.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\CreateTest\CreateTest.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\CreateTest\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Home.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Profile\Profile.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Profile\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Question\Question.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Tests\Tests.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Tests\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Thanks\Thanks.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Thanks\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Home\Home.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Home\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Login\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Login\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Profile\Profile.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Profile\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Question\Question.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\TestDescription\TestDescription.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Thanks\Thanks.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Thanks\_Layout.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Views\Profile\Profile.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Views\Tests\Tests.cshtml" />
+      <UpToDateCheckInput Remove="Views\Tests\_Layout.cshtml" />
+    </ItemGroup>
+
 
 </Project>

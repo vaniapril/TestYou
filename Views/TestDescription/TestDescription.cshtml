@@ -1,0 +1,53 @@
+@model object    
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="~/css/TestDescription.css"/>
+    <script src="~/js/FuncTestDescription.js"></script>
+    <title>title</title>
+</head>
+<body>
+<div class="Main">
+    <h1 class="Title" align="center">TestYou</h1>
+    <h1 class="Title" align="center">Тест:</h1>
+    <h4>
+        <li class="list-group-item" width='100%'>
+            <table border="0" cellpadding="10">
+                <tr align="top">
+                    <td align="right">
+                        Название:
+                    </td>
+                    <td id="Title" align="left">@ViewBag.Title</td>
+                </tr>
+                <tr align="top">
+                    <td align="right">
+                        Описание:
+                    </td>
+                    <td id="Description" align="left">@ViewBag.Description</td>
+                </tr>
+            </table>
+        </li>
+    </h4>
+    <h4 class="buttons">
+        <input type="button" value="Пройти" onclick="Pass(@ViewBag.Id)">
+        <input type="button" value="Назад" onclick="Back()">
+    </h4>
+    <h4 class="box" >
+        <a id="comment"></a>
+        <h4 id="Comments" class="box"></h4>
+    </h4>
+</div>
+</body>
+</html>
+
+<script>
+Init( @ViewBag.Id);
+</script>

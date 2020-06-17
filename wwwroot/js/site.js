@@ -1,4 +1,18 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+function getUserId() {
+    return getCookie("UserId");
+}
 
-// Write your JavaScript code.
+function deleteUserId() {
+    document.cookie = "UserId=; expires=-1; path=/";
+}
+
+function setUserId(id) {
+    document.cookie = "UserId=" + id + "; path=/";
+}
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}

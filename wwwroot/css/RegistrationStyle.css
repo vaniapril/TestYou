@@ -1,0 +1,40 @@
+h1.HorizontalCenterMainText{
+    position: absolute;
+    top: 10%;
+    left: 45%;
+}
+input.ForLogin{
+    position: absolute;
+    top: 38%;
+    left: 41%;
+}
+
+input.ForPassword1{
+    position: absolute;
+    top: 43%;
+    left: 41%;
+}
+input.ForPassword2{
+    position: absolute;
+    top: 48%;
+    left: 41%;
+}
+
+input.ForButton{
+    position: absolute;
+    top: 53%;
+    left: 41%;
+}
+
+a.ForLogin{
+    color :black;
+    position: absolute;
+    top: 58%;
+    left: 41%;
+}
+
+h3.ForPageName{
+    position: absolute;
+    top: 29%;
+    left: 44.5%;
+}

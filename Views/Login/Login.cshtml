@@ -1,0 +1,32 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="~/css/LoginStyle.css"/>
+    <script src="~/js/FuncLogin.js"></script>
+    <script src="~/js/site.js"></script>
+    <title>Login</title>
+</head>
+<body>
+<div>
+    <h1 class="HorizontalCenterMainText" >Test You</h1>
+    <h3 class = "SignIn">Вход</h3>
+    <input id="email" size="30" type="text" value="" placeholder="Логин" class="ForLogin"/>
+    <input id="password" type="password" size="30" value="" placeholder="Пароль" class="ForPassword"/>
+    <a class="ForRegistration" asp-area="" asp-controller="Registration" asp-action="Registration">У вас нет аккаунта?</a>
+    <input id="button" class="ForButton" value="Войти" type="submit" onclick="Login()"/>
+</div>
+</body>
+</html>
+
+<script>
+Init()
+</script>
+
+
+

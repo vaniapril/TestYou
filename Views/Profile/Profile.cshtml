@@ -1,0 +1,33 @@
+@model object
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Profile";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="~/css/ProfileStyle.css"/>
+     <script src="~/js/FuncProfile.js"></script>
+     <script src="~/js/site.js"></script>
+    <title>Profile</title>
+</head>
+<body>
+<div>
+    <h1 class="NameTest" align="center" >Test You</h1>
+    <h2 class="Text" id="login">Профиль</h2>
+    <p class="MainText">Дорогой друг, это твой личный кабинет, в котором ты можешь <a href="#" onclick="SignOut()">Выйти</a> из аккаунта, и зайти в другой, если такой имеется. Также здесь ты можешь посмотреть все свои созданные тесты,или их недостаточно, то <a asp-area="" asp-controller="TestCreate" asp-action="TestCreate">создать</a> еще один, или выйти на <a asp-action="Home" asp-controller="Home" asp-area="">Главную страницу</a>. Но а главное, ты можешь <a asp-action="Thanks" asp-controller="Thanks" asp-area="">финансово поддержать </a>разрабочитков этого проекта.</p>
+    <p class="Text2">
+            Ваши Тесты:
+        </p>
+        <h4 id="Tests"></h4>
+</div>
+</body>
+</html>
+<script>
+Init()
+</script>
