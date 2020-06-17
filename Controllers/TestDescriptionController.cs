@@ -36,7 +36,6 @@ namespace TestYou.Controllers
             users.ForEach(user => { user.Password = "";});
             return users;
         }
-        
         public IActionResult  TestDescription(int id)
         {
             var test = _testService.GetById(id);

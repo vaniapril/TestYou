@@ -17,7 +17,6 @@ namespace TestYou.Controllers
             _logger = logger;
             _testService = new TestService();
         }
-
         [HttpGet]
         public List<Test> GetTests()
         {
@@ -32,7 +31,6 @@ namespace TestYou.Controllers
                 return tests;
             } 
         }
-
         public IActionResult Home()
         {
             return View();

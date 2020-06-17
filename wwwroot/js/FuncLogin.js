@@ -6,7 +6,7 @@ function Init() {
 }
 
 function Login() {
-    let login = document.getElementById("email1").value;
+    let login = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     if(login !== "" && password !== ""){
         console.log("POST-LOGIN");
@@ -31,3 +31,5 @@ function Login() {
         alert("Заполниет поля");
     }
 }
+
+
